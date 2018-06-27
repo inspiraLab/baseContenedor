@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Guía de inspiración - ARGOS DIGITAL / INSPIRA</title>  <!-- /Cambiar título de la página para el navegador -->
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+
+		
+        <script type='text/javascript' src='js/jquery.min.js'></script>
+        <script type='text/javascript' src='js/tabletop1.3.4.js'></script>
+        <script type='text/javascript' src='js/sheetsee.js'></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Sniglet" rel="stylesheet">
+		
+	    <link rel='stylesheet' type='text/css' href='bt/css/bootstrap.css'>		
+        <link rel='stylesheet' type='text/css' href='fuente/style.css'>	
+		<link rel='stylesheet' type='text/css' href='estilacho.css'>	 
+
+	    <link rel="shortcut icon" href="favicon.ico" type="image/icon" />	
+
+	   	<!-- con esto evito cargar cache y fuerzo a cargar todo el sitio -->
+    	<meta http-equiv="Expires" content="0">
+		<meta http-equiv="Last-Modified" content="0">
+		<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+		<meta http-equiv="Pragma" content="no-cache">
+		
+    </head>
+
+    <body>
+
+	<!-- <div id="preloader"><div id="status">&nbsp;</div></div> -->
+		
+	<div id="tope">
+		<a href="#" class="primerito">ARGOS DIGITAL</a>
+		<a href="http://inspiralab.net"><img src="credito.png" class="pull-right"></a>
+	</div>
+		
+
+        <div class="container" id="todito">
+		        <div class="row" style="margin-top:0px;">
+			          <div class="col-md-12">	
+
+					  
+                    <div id="fullTable"></div>
+
+
+                    <script id="fullTable_template" type="text/html"> <!-- Mustache template -->
+                        <table width="98%">
+                            <tr><th class="tHeader">Descripción</th></tr>
+																						
+							{{#rows}}	
+							<!-- modal -->
+								<div id="{{id}}">
+									<div class="popupBoxWrapper">
+										<div class="popupBoxContent">				
+											<div class="cerrao"><a href="javascript:void(0)" onclick="modal('uno');">X</a></div>
+											
+											{{#insights}}<div class="destacao">{{insights}}</div>{{/insights}}
+										
+										
+											{{#red}}<div class="redsocial">{{red}}</div>{{/red}}
+											{{#contenido}}<h4 class="contenio">{{contenido}}</h4>{{/contenido}}
+											
+											<div class="metadatos">
+												{{#fecha-contenido}}<div class="fechao">{{fecha-contenido}}</div>{{/fecha-contenido}}
+												{{#hashtags}}<div class="tagueado">{{hashtags}}</div>{{/hashtags}}
+												{{#formato}}<div class="formateo">{{formato}}</div>{{/formato}}
+											</div>
+											
+											<div class="metadatos2">
+												{{#tematica}}<div class="tematico">{{tematica}}</div>{{/tematica}}
+												{{#tipodecontenido}}<div class="tipoconte">{{tipodecontenido}}</div>{{/tipodecontenido}}
+												{{#caracter}}<div class="caracterizao">{{caracter}}</div>{{/caracter}}
+												{{#caracteristicasperiodo}}<div class="contextuao">{{caracteristicasperiodo}}</div>{{/caracteristicasperiodo}}
+											</div>
+											
+											<div class="metricas">
+												{{#likes}}<div class="likeao">{{likes}}</div>{{/likes}}
+												{{#love}}<div class="loveao">{{love}}</div>{{/love}}
+												{{#haha}}<div class="hahao">{{haha}}</div>{{/haha}}
+												{{#wow}}<div class="wowao">{{wow}}</div>{{/wow}}
+												{{#sad}}<div class="sadao">{{sad}}</div>{{/sad}}
+												{{#angry}}<div class="angryao">{{angry}}</div>{{/angry}}
+												{{#shareretweet}}<div class="shareao">{{shareretweet}}</div>{{/shareretweet}}
+												{{#commentsreply}}<div class="commentao">{{commentsreply}}</div>{{/commentsreply}}
+												{{#recomendar}}<div class="recomendao">{{recomendar}}</div>{{/recomendar}}
+												{{#visualizaciones}}<div class="visualizao">{{visualizaciones}}</div>{{/visualizaciones}}
+												{{#nomegusta}}<div class="nomegustao">{{nomegusta}}</div>{{/nomegusta}}
+											</div>	
+											
+											<div class="metricas2">
+												{{#engagement}}<div class="engageao">{{engagement}}</div>{{/engagement}}
+											</div>	
+											
+											<div class="calltoactiondiv">
+												{{#calltoaction}}<div class="calltoao">{{calltoaction}}</div>{{/calltoaction}}
+												{{#calltoactionrazon}}<div class="calltoaorazon">{{calltoactionrazon}}</div>{{/calltoactionrazon}}
+											</div>	
+											
+											<div class="calltoactiondiv">
+												{{#emociones}}<div class="emocionao">{{emociones}}</div>{{/emociones}}
+												{{#valoracion}}<div class="valorao">{{valoracion}}</div>{{/valoracion}}	
+											</div>				
+										</div>
+									</div>
+								</div>
+
+								<!-- cierra modal -->		
+							{{/rows}}
+
+
+
+							
+                        </table>
+                    </script>	 <!-- Termina mustache template -->	
+
+                    <script type="text/javascript">
+                     document.addEventListener('DOMContentLoaded', function() {
+                         var URL = "1TprR5FmZmya2QQbIOgsxuQSQR_ry6Bjta8Bo2ptCbgY"
+
+                         Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true, wanted: ['Comparativo'] } )
+
+                         function showInfo(data, tableTop) {
+                             console.log(tableTop);
+                             var tableOptions = {"data": data
+                                               , "pagination": 700, "tableDiv": "#fullTable", "filterDiv": "#fullTableFilter"}
+                             Sheetsee.makeTable(tableOptions)
+                             Sheetsee.initiateTableFilter(tableOptions)
+
+                             california = Sheetsee.getKeyword(data, "CALIFORNIA");
+                             console.log("CALIFORNIA",data);
+                             var calOptions = { "data": data,
+                                                "pagination": 5,
+                                                "tableDiv": "#calTable",
+                                                "filterDiv": "#calFilter"
+                             }
+                             Sheetsee.makeTable(calOptions)
+                             Sheetsee.initiateTableFilter(calOptions)
+
+                             var html = Sheetsee.ich.photogrid({'rows': data})
+                             $('#photogrid').html(html)
+                         }
+                     })
+                    </script>
+
+                </div>
+
+
+            </div>
+
+        </div> <!-- /Termina el contenido -->	
+
+		<div style="width:100%;margin-top:60px;margin-bottom:30px;text-align:center;">
+			<a href="http://inspiralab.net/" target="_blank"><img src="cliente.png" style="height:120px;"></a>
+		</div>
+
+<script type="text/javascript">
+	window.onload=function(){
+	var formref=document.getElementById("switchform");
+	var formref2=document.getElementById("switchform2");
+	indicateSelected(formref.choice)
+	indicateSelected(formref2.choice)
+	}
+</script>		
+		
+		
+
+    </body>
+</html>
