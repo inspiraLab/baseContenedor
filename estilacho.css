@@ -1,0 +1,331 @@
+/* ---------------- FUENTES ---------------- */
+
+@font-face{
+  font-family: titulos;
+  src: url(tipo/ITCFranklinGothicStd-BkCd.otf);
+} 
+
+@font-face{
+  font-family: parrafos;
+  src: url(tipo/ITCFranklinGothicStd-Book.otf);
+} 
+
+@font-face{
+  font-family: navs;
+  src: url(tipo/ITCFranklinGothicStd-MdCd.otf);
+} 
+
+
+
+/* ---------------- Estilos genéricos ---------------- */
+
+body{
+    font-family: parrafos;
+    font-size: 14px;
+    background: #FFF url(img/fondo.png) no-repeat fixed top center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: #111;
+    width: 100%;
+}
+
+a{color: #FFF;text-decoration: none;}
+a:link, a:visited {color:#FFF;text-decoration:none;}
+a:hover, a:active{color:#FFF;text-decoration:none;}
+textarea:focus, input:focus{outline: none;}
+p{margin:5px 0;}
+.pordefecto{cursor:default;}
+
+/* ---------------- Sobreescribe los estilos de las tablas ---------------- */
+
+    #Pagination {border-top: 4px solid #CCF4FF; margin: 10px 0px; padding-top: 10px; display: inline-block;}
+    #Pagination a {cursor: pointer;}
+    .no-pag {color: #acacac; border: none;}
+    .no-pag:hover {color: #acacac;}
+    input {border: none; border-bottom: 1px solid #333;margin: 10px 0px; width: 100%; font-size: 16px; padding-bottom: 6px;border-radius: 15px;}
+    .tHeader {padding: 8px; cursor: pointer; text-align: left;display:none;}
+	td {    border-bottom: 0px solid #DDD;padding-top:20px;padding-bottom:20px;vertical-align:top;}
+	#bloque{width:96%;margin:0;}	
+	#fullTableFilter{
+    line-height: 16px;
+    width: 100%;
+    font-size: 12px;
+    border: 1px solid #CCC;
+    font-family: Roboto, sans-serif;
+    padding: 2px 6px;
+    cursor: text;
+    background: #eee url(img/buscador.png) no-repeat top left;
+    padding-left: 28px;
+    margin: 5px 0;	
+	color:#444;
+		}
+		
+/* ---------------- Títulos generales ---------------- */
+
+h1, h2, h3, h4 {
+	font-family: Roboto, sans-serif;
+	color:#212121;
+}
+		
+h1{
+	text-align:left;
+	font-size:24px;
+	line-height:30px;
+	font-weight:bold;
+	margin: 15px 0 0 0;
+	color:#242424;
+	text-transform:uppercase;
+	}
+
+h2{
+	font-size: 20px;
+    line-height: 40px;
+    font-weight: bold;
+    margin: 0;
+    color: #1960A9;
+    text-align: center;
+}
+		
+h3{  
+    font-size: 10px;
+    line-height: 34px;
+    font-weight: bold;
+    margin: 0;
+    color: #FFF;
+    text-align: left;
+    display: block;
+    background: #888786;
+    border-radius: 6px;
+    width: 96%;
+    left: 54%;
+    position: relative;
+    margin-left: -50%;
+    border: 2px solid #888786;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    height: 34px;
+}
+		
+h4{
+	font-size: 38px;
+	margin:0;
+	font-weight:bold;
+}
+
+h5, .h5 {
+    font-size: 20px;
+}
+
+/* ---------------- Estilos estructurales ---------------- */
+
+#todito{
+	margin-top:60px;
+}
+		
+.separadora{
+	background:url(img/separa.png) repeat-y top center;
+}
+
+.bloqueo{
+	margin-bottom: 5px;
+    margin-top: 0px;
+	}
+
+.sinpad{
+	padding:2px;
+}
+
+#filtro{
+    padding: 0 5px 0 0;
+    height: 30px;
+    width: 100%;}
+	
+#tope{
+	background: #000000;
+    color: #FEBA27;
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: left;
+    border-bottom: 2px solid #424242;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    z-index: 100;
+}
+
+#tope a:link, #tope a:visited{
+	color:#FFF;
+	margin:0 10px;
+}
+
+#tope a:hover, #tope a:active{
+	color:#CCC;
+}	
+
+/* ---------------- Estilos de los tooltips simples ---------------- */
+	
+
+/* Add this attribute to the element that needs a tooltip */
+[data-tooltip] {
+  position: relative;
+  cursor: pointer;
+  z-index:19000;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 104%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -160px;
+  padding: 7px;
+  width: 320px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background-color: #444;
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;
+  bottom: 104%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 5px solid #444;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* ---------------- EL SWUITCHER SI LO NECESITO ---------------- */
+
+	
+#switchform	{  }
+	
+input {
+    width: 14px;
+    font-size: 14px;
+}	
+
+	input[type="radio"], input[type="checkbox"] {
+    margin: 2px 0 0;
+    margin-top: 1px \9;
+    line-height: normal;
+    float: left;
+    display: inline;
+	cursor:pointer;
+}
+
+
+	
+
+input[type=checkbox] + label {
+  color: #ccc;
+  font-style: italic;
+} 
+input[type=checkbox]:checked + label {
+  color: #f00;
+  font-style: normal;
+} 
+
+/* ---------------- SOBREESCRIBE LOS ESTILOS DE LOS MODALES ---------------- */
+
+.modal-header {
+    padding: 0 15px;
+    border-bottom: 1px solid #FFF;
+    height: 36px;
+    color: #FFF;
+	border-radius: 5px 5px 0 0;	
+}
+
+.modal-header .close {
+    margin-top: 1px;
+    font-size: 30px;
+    color: #FFF;
+    opacity: .7;
+}
+
+
+.modal-body {
+    font-size: 18px;
+	padding-top: 30px;
+}	
+	
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+    line-height: 40px;
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.modal-dialog {
+    margin: 60px auto;
+}
+
+
+
+/* Preloader */
+#preloader {
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background:#D4D4D4 url(img/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	z-index:9999; /* makes sure it stays on top */
+}
+
+#status {
+	width:200px;
+	height:200px;
+	position:absolute;
+	left:50%; /* centers the loading animation horizontally on the screen */
+	top:50%; /* centers the loading animation vertically on the screen */
+	background-image:url('img/inspiraspinner.gif'); /* path to your loading animation */
+	background-repeat:no-repeat;
+	background-position:center;
+	margin:-100px 0 0 -100px; /* is width and height divided by two */
+}
