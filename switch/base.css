@@ -1,0 +1,40 @@
+/* Aquí los estilos del switcher --- */		
+.ventasnalr,
+.tmkr,
+.ventasregr,
+.vendedoresr,
+.ventasr,
+.trader,
+.auxtrader,
+.coordtrader,
+.analtrader,
+.agenciar,
+.canalesr,
+.genomar,
+.compradoresr,
+.auxjurr,
+.impulsor{
+	opacity:0.1;	
+}	
+	
+.remplazar{opacity:1;}
+		
+.ventasnalr:hover,
+.tmkr:hover,
+.ventasregr:hover,
+.vendedoresr:hover,
+.ventasr:hover,
+.trader:hover,
+.auxtrader:hover,
+.coordtrader:hover,
+.analtrader:hover,
+.agenciar:hover,
+.canalesr:hover,
+.genomar:hover,
+.compradoresr:hover,
+.auxjurr:hover,
+.impulsor:hover{
+	opacity:1;background:#55B74A;color:#FFF;
+
+
+}	

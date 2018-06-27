@@ -1,0 +1,59 @@
+/* Aquí los estilos del switcher --- */		
+
+.cliente,
+.personal,
+.ventasnal,
+.tmk,
+.ventasreg,
+.vendedores,
+.ventas,
+.trade,
+.auxtrade,
+.coordtrade,
+.analtrade,
+.cpvmerca,
+.merca,
+.ases,
+.agencia,
+.canales,
+.telecliente,
+.genoma,
+.compradores,
+.auxjur,
+.imprepop,
+.ofertas,
+.negocios, .desarrollo, .impulso{
+	opacity:0.1;	
+}
+		
+.cpvases{opacity:1;}
+
+
+
+.cliente:hover,
+.personal:hover,
+.ventasnal:hover,
+.tmk:hover,
+.ventasreg:hover,
+.vendedores:hover,
+.ventas:hover,
+.trade:hover,
+.auxtrade:hover,
+.coordtrade:hover,
+.analtrade:hover,
+.cpvmerca:hover,
+.merca:hover,
+.ases:hover,
+.agencia:hover,
+.canales:hover,
+.telecliente:hover,
+.genoma:hover,
+.compradores:hover,
+.auxjur:hover,
+.imprepop:hover,
+.ofertas:hover,
+.negocios:hover, .desarrollo:hover, .impulso:hover{
+	opacity:1;background:#55B74A;color:#FFF;
+
+
+}	
